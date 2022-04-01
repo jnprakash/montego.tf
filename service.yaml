@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: montego-lb-service
+  namespace: montego
+spec:
+  selector:
+    app: nginx
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
